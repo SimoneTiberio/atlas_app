@@ -1,0 +1,71 @@
+/* Scoped to the Sales workflow; shared shell and Technical styles stay separate. */
+.sales-workflow { min-width: 0; }
+.sales-workflow .intro { margin-bottom: 30px; }
+.sales-workflow .intro h1 { margin-top: 12px; }
+.sales-workflow .intro p { color: var(--muted); font-size: 13px; }
+.sales-workflow button, .sales-workflow input, .sales-workflow select { font: inherit; }
+.sales-workflow button { cursor: pointer; }
+.sales-workflow :is(button, input, select, summary):focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.sales-workflow .content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.sales-workflow .panel { background: white; border: 1px solid var(--border); border-radius: 12px; }
+.sales-workflow .panel-heading { padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.sales-workflow h2 { font-size: 18px; margin: 8px 0; }
+.sales-workflow .text-button { background: transparent; border: 0; color: var(--muted); font-size: 12px; }
+.sales-workflow .stepper { display: flex; gap: 8px; padding: 0 24px 22px; border-bottom: 1px solid var(--border); }
+.sales-workflow .step { flex: 1; min-width: 0; border: 0; background: none; display: flex; align-items: center; gap: 7px; text-align: left; color: var(--muted); padding: 0; }
+.sales-workflow .step > span { flex-shrink: 0; display: grid; place-items: center; width: 24px; height: 24px; font-size: 10px; background: #f0f2f6; border-radius: 50%; }
+.sales-workflow .step small { font-size: 10px; }
+.sales-workflow .step.active { color: var(--accent); }
+.sales-workflow .step.active > span { color: white; background: var(--accent); }
+.sales-workflow .form-body { padding: 24px; min-height: 420px; }
+.sales-workflow .form-body h2 { font-size: 21px; }
+.sales-workflow .muted { font-size: 12px; color: var(--muted); }
+.sales-workflow fieldset { border: 0; padding: 0; margin: 23px 0; min-width: 0; }
+.sales-workflow legend { font-size: 12px; font-weight: 600; margin-bottom: 12px; }
+.sales-workflow .choices { display: flex; gap: 8px; }
+.sales-workflow .choice, .sales-workflow .workload { color: var(--text); background: white; border: 1px solid var(--border); border-radius: 7px; padding: 13px 11px; font-size: 12px; text-align: left; }
+.sales-workflow .choice { flex: 1; }
+.sales-workflow .selected { border-color: var(--accent); background: #edf2ff; color: var(--accent); }
+.sales-workflow .workloads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.sales-workflow .workload { min-height: 56px; }
+.sales-workflow .hint { font-size: 12px; line-height: 1.8; color: var(--muted); background: #f5f7fb; border-radius: 6px; padding: 12px; overflow-wrap: anywhere; }
+.sales-workflow .hint p { margin: 8px 0; }
+.sales-workflow .form-footer { border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; gap: 12px; }
+.sales-workflow .form-footer > span { font-size: 10px; color: var(--muted); }
+.sales-workflow .form-footer > div { display: flex; gap: 7px; }
+.sales-workflow .primary, .sales-workflow .secondary { border-radius: 6px; font-size: 11px; font-weight: 600; padding: 12px 16px; border: 1px solid var(--accent); }
+.sales-workflow .primary { background: var(--accent); color: white; }
+.sales-workflow .secondary { background: white; color: var(--accent); }
+.sales-workflow .results { min-width: 0; }
+.sales-workflow .results-header { display: flex; justify-content: space-between; align-items: center; padding: 3px 0 9px; }
+.sales-workflow .count { display: inline-block; font-size: 10px; background: #eaf0fc; border-radius: 5px; padding: 3px 6px; margin-left: 4px; }
+.sales-workflow .recommendation { margin-bottom: 16px; padding: 22px; }
+.sales-workflow .card-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.sales-workflow .tag { font-size: 10px; padding: 5px 7px; border-radius: 4px; background: #edf2ff; color: var(--accent); }
+.sales-workflow .recommendation h2 { font-size: 23px; margin: 16px 0 4px; letter-spacing: -.7px; }
+.sales-workflow .sku { font-size: 11px; color: var(--muted); margin: 0; }
+.sales-workflow .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+.sales-workflow .metrics strong { font-size: clamp(12px, 1.4vw, 22px); overflow-wrap: anywhere; }
+.sales-workflow .metrics small { display: block; font-size: 9px; color: var(--muted); margin-top: 6px; }
+.sales-workflow .justification { padding-top: 16px; }
+.sales-workflow .justification > strong { font-size: 12px; }
+.sales-workflow .justification p { font-size: 12px; color: var(--muted); margin: 8px 0; }
+.sales-workflow details { font-size: 12px; color: var(--muted); margin-top: 17px; line-height: 1.7; }
+.sales-workflow summary { cursor: pointer; font-weight: 600; }
+.sales-workflow .footnote { font-size: 10px; color: var(--muted); line-height: 1.8; }
+.sales-workflow .field { display: block; font-size: 12px; font-weight: 600; margin: 20px 0; }
+.sales-workflow .input-wrap { position: relative; margin-top: 9px; }
+.sales-workflow .input-wrap span { position: absolute; right: 12px; top: 15px; font-size: 10px; color: var(--muted); pointer-events: none; }
+.sales-workflow input, .sales-workflow select { width: 100%; background: white; border: 1px solid #d6dce5; border-radius: 6px; padding: 13px 12px; color: var(--text); }
+.sales-workflow input { padding-right: 85px; }
+.sales-workflow select { margin-top: 9px; }
+.sales-workflow .empty { padding: 22px; border: 1px solid #e5d5b2; background: #fffbef; border-radius: 10px; font-size: 12px; }
+.sales-workflow .empty h3 { margin-top: 0; }
+.sales-workflow .rejections { padding: 15px; border: 1px solid var(--border); border-radius: 8px; }
+.sales-workflow ul { padding-left: 18px; }
+.sales-workflow .results-placeholder { padding: 30px; }
+.sales-workflow .results-placeholder p { font-size: 13px; color: var(--muted); }
+.sales-workflow .fleet-guidance { margin: 16px 0; }
+.sales-workflow .fleet-warning { margin-top: 16px; background: #fffbef; border: 1px solid #e5d5b2; color: #78643f; }
+@media (max-width: 1150px) { .sales-workflow .content { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 650px) { .sales-workflow .panel-heading, .sales-workflow .form-body { padding: 22px 18px; } .sales-workflow .stepper { padding: 0 18px 20px; } .sales-workflow .form-footer { padding: 18px; flex-wrap: wrap; } .sales-workflow .step { align-items: flex-start; } }

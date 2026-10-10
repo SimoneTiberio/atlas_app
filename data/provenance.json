@@ -1,0 +1,8 @@
+{
+  "datasetSource": "reference/atlas-explorer.html",
+  "extractedVariable": "DATA",
+  "sourceSha256": "b53e2318dbb0d6a8b9a9a1983f5ab2ec3c1289021015df357b3e99eadde894bc",
+  "dataAsOf": "2026-10-07",
+  "snapshotCreatedOn": "2026-10-10",
+  "verification": "Extracted without changing values. Vendor specifications have not been independently verified."
+}

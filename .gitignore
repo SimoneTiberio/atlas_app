@@ -1,0 +1,12 @@
+node_modules/
+.npm-cache/
+.runtime/
+.next/
+out/
+dist/
+coverage/
+.env*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

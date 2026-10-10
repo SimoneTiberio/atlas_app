@@ -1,0 +1,3 @@
+# Preserve exact snapshot bytes for provenance and audit hash checks on every OS.
+data/atlas.json -text whitespace=cr-at-eol
+reference/atlas-explorer.html -text

@@ -1,0 +1,92 @@
+/* Explorer presentation is scoped; the shared shell and Sales own their styles. */
+.technical-explorer { --ink: var(--text); --panel: #fff; --paper: #f6f7f9; --rule: #e4e8ed; --coolant: #315acb; --coolant-soft: #edf2ff; --coolant-ink: #24469d; --over: #b54747; min-width: 0; }
+.technical-explorer :is(button, select, input) { font: inherit; color: inherit; }
+.technical-explorer :is(button, select, input, a):focus-visible { outline: 2px solid var(--coolant); outline-offset: 3px; }
+.technical-explorer .num { font-variant-numeric: tabular-nums; }
+.technical-grid { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 20px; align-items: start; }
+.technical-inputs { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 18px; position: sticky; top: 20px; max-height: calc(100dvh - 40px); overflow: auto; }
+.technical-explorer .field { margin-bottom: 18px; }
+.technical-explorer .field:last-child { margin-bottom: 0; }
+.technical-explorer .field > label, .technical-explorer .field > .label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+.technical-explorer .hint { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.technical-explorer select, .technical-explorer input[type=number] { width: 100%; border: 1px solid var(--rule); border-radius: 6px; padding: 9px 10px; background: #fff; }
+.technical-explorer .seg { display: flex; gap: 4px; background: var(--paper); padding: 3px; border-radius: 8px; }
+.technical-explorer .seg button { flex: 1; border: 0; background: transparent; padding: 6px 4px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+.technical-explorer .seg button[aria-pressed=true] { background: #fff; font-weight: 600; box-shadow: 0 0 0 1px var(--rule); }
+.technical-explorer .plist { display: flex; flex-direction: column; gap: 6px; }
+.technical-explorer .pcard { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; text-align: left; border: 1px solid var(--rule); background: #fff; border-radius: 8px; padding: 9px 11px; cursor: pointer; }
+.technical-explorer .pcard[aria-checked=true] { border-color: var(--coolant); box-shadow: inset 3px 0 0 var(--coolant); background: var(--coolant-soft); }
+.technical-explorer .pcard:disabled { cursor: not-allowed; opacity: .5; }
+.technical-explorer .pname { font-weight: 600; font-size: 12px; overflow-wrap: anywhere; }
+.technical-explorer .pmeta { grid-column: 1 / -1; font-size: 11px; color: var(--muted); }
+.technical-explorer .vendor-head { font-size: 12px; color: var(--muted); margin: 10px 0 2px; }
+.technical-explorer .vendor-head:first-child { margin-top: 0; }
+.technical-explorer .presets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.technical-explorer .presets button { border: 1px solid var(--rule); background: #fff; border-radius: 999px; padding: 3px 10px; font-size: 11px; cursor: pointer; }
+.technical-explorer .presets button:hover { border-color: var(--coolant); }
+.technical-explorer .tag { display: inline-block; font-size: 10px; padding: 1px 7px; border-radius: 999px; white-space: nowrap; line-height: 1.6; }
+.technical-explorer .tag.ship { background: #eaf4ef; color: #32624a; }
+.technical-explorer .tag.ramp { background: #e7ecf6; color: #33456e; }
+.technical-explorer .tag.ann, .technical-explorer .tag.est { background: #faf2e5; color: #886428; }
+.technical-explorer .tag.rec { background: var(--coolant); color: #fff; }
+.technical-explorer .tag.warn { background: #faeeee; color: var(--over); }
+.technical-explorer .why { border: 0; background: none; padding: 0 2px; margin-left: 4px; color: var(--coolant); font-size: 11px; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; white-space: nowrap; }
+.technical-explorer .why:hover { color: var(--coolant-ink); }
+.technical-results { min-width: 0; }
+.technical-explorer .headline { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 20px 22px; margin-bottom: 16px; }
+.technical-explorer .headline h2 { margin: 0 0 4px; font-size: 20px; font-weight: 600; letter-spacing: -.3px; }
+.technical-explorer .sub { color: var(--muted); font-size: 12px; margin: 0; }
+.technical-explorer .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 16px; border-top: 1px solid var(--rule); }
+.technical-explorer .fact { padding: 12px 14px 4px 0; min-width: 0; }
+.technical-explorer .fact .k { font-size: 11px; color: var(--muted); }
+.technical-explorer .fact .v { font-size: clamp(16px, 1.5vw, 24px); font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
+.technical-explorer .fact .v small { font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 3px; }
+.technical-explorer .fact .d { font-size: 11px; color: var(--muted); }
+.technical-explorer .opts-head { display: flex; justify-content: space-between; align-items: baseline; margin: 22px 2px 10px; gap: 12px; flex-wrap: wrap; }
+.technical-explorer .opts-head h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.technical-explorer .opts-head p { margin: 0; color: var(--muted); font-size: 12px; }
+.technical-explorer .option { background: var(--panel); border: 1px solid var(--rule); border-left: 4px solid transparent; border-radius: 12px; padding: 18px 22px; margin-bottom: 12px; }
+.technical-explorer .option.best { border-left-color: var(--coolant); }
+.technical-explorer .option-header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.technical-explorer .option-header h4 { margin: 0; font-size: 15px; font-weight: 600; }
+.technical-explorer .tech { color: var(--muted); font-size: 12px; margin: 2px 0 0; }
+.technical-explorer .verdict { margin: 14px 0 6px; font-size: 13px; }
+.technical-explorer .verdict strong { font-weight: 600; }
+.technical-explorer .gauge { margin: 12px 0 4px; }
+.technical-explorer .gauge svg { display: block; width: 100%; height: 56px; overflow: visible; }
+.technical-explorer .cap { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 2px; gap: 12px; flex-wrap: wrap; }
+.technical-explorer .netgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 10px; border-top: 1px solid var(--rule); }
+.technical-explorer .netgrid .fact .v { font-size: 18px; }
+.technical-explorer .alts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 10px; }
+.technical-explorer .alt { border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+.technical-explorer .alt h5 { margin: 0 0 2px; font-size: 13px; font-weight: 600; }
+.technical-explorer .alt p { margin: 0; font-size: 12px; color: var(--muted); }
+.technical-explorer .alt dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 12px; margin: 8px 0 0; font-size: 12px; }
+.technical-explorer .alt dt { color: var(--muted); }
+.technical-explorer .alt dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.technical-explorer .note { font-size: 11px; color: var(--muted); margin-top: 10px; }
+.technical-explorer .note.warn { color: var(--over); }
+.technical-explorer .more { border: 1px solid var(--rule); background: #fff; border-radius: 8px; padding: 8px 14px; cursor: pointer; font-size: 12px; }
+.technical-explorer .empty { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 28px 22px; }
+.technical-explorer .empty h2 { margin: 0 0 6px; font-size: 18px; }
+.technical-foot { font-size: 11px; color: var(--muted); margin-top: 20px; }
+.technical-dialog { border: 0; border-radius: 12px; padding: 0; max-width: 640px; width: calc(100% - 32px); color: var(--ink); background: #fff; box-shadow: 0 20px 60px #13212e47; }
+.technical-dialog::backdrop { background: #13212e73; }
+.technical-dialog .dlg { padding: 22px 26px 20px; max-height: min(80dvh, 760px); overflow: auto; }
+.technical-dialog h2 { margin: 0 26px 6px 0; font-size: 19px; font-weight: 600; line-height: 1.3; }
+.technical-dialog .lead { margin: 0 0 14px; color: var(--coolant-ink); font-size: 15px; }
+.technical-dialog .explanation-body p { margin: 0 0 10px; }
+.technical-dialog .explanation-body ul, .technical-dialog .explanation-body ol { margin: 0 0 12px; padding-left: 20px; }
+.technical-dialog .explanation-body li { margin-bottom: 4px; }
+.technical-dialog .explanation-table { overflow-x: auto; }
+.technical-dialog table { border-collapse: collapse; margin: 4px 0 12px; font-size: 13px; }
+.technical-dialog th, .technical-dialog td { border-bottom: 1px solid var(--rule); padding: 4px 14px 4px 0; text-align: left; }
+.technical-dialog .eng { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.technical-dialog .eng h3 { margin: 0 0 6px; font-size: 13px; font-weight: 600; }
+.technical-dialog .eng ul { margin: 0; padding-left: 18px; font-size: 13px; }
+.technical-dialog a { color: var(--coolant-ink); text-decoration: underline; }
+.technical-dialog .close { position: absolute; top: 12px; right: 12px; border: 0; background: var(--paper); border-radius: 999px; width: 32px; height: 32px; cursor: pointer; font-size: 18px; line-height: 1; }
+@media (max-width: 1200px) { .technical-grid { grid-template-columns: minmax(0, 1fr); } .technical-inputs { position: static; max-height: none; } .technical-explorer .plist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .technical-explorer .vendor-head { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .technical-explorer .facts, .technical-explorer .netgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .technical-explorer .alts, .technical-explorer .plist { grid-template-columns: minmax(0, 1fr); } .technical-explorer .headline, .technical-explorer .option { padding: 18px; } }
+@media print { .technical-inputs, .technical-explorer .why, .technical-explorer .more { display: none; } .technical-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: no-preference) { .technical-dialog[open] { animation: technical-pop .16s ease-out; } @keyframes technical-pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } } }
